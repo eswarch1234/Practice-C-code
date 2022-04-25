@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+struct Rectangle{
+    int length;
+    int breadth;
+};
+
+//Function to calculate the area of a rectangle
+int AreofRectangel(Rectangle *a)
+{
+  return (a->length)*(a->length);
+}
+
+int main()
+{
+   Rectangle r;
+   int x;
+   cout<<"enter length of Rectangle "<<endl;
+   cin>>r.length;
+   cout<<"enter breadth of Rectangle "<<endl;
+   cin>>r.breadth;
+   
+   //sending the address of the structure to the function
+   x = AreofRectangel(&r);
+   cout<<"Area of Rectangle is "<<x<<endl;
+    return 0;
+}
+
+
+Output:
+enter length of Rectangle 
+32
+enter breadth of Rectangle 
+12
+Area of Rectangle is 1024
