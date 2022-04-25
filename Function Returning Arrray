@@ -1,0 +1,47 @@
+#include <iostream>
+#include <stdlib.h>
+using namespace std;
+//Function that returns an array 
+int * ReturnArray(int a)
+{
+  int *p;
+  p = new int; // the array is created in the heap memory
+  //Inserting Values into array
+  for(int i=0;i<a;i++)
+    {
+        cout<<"Enter the Value of "<<i<<" element"<<endl;
+        cin>>p[i];
+    }
+  return p; 
+}
+
+int main()
+{
+    int *x;
+    int n;
+    cout<<"Enter the size of array to be returned : "<<endl;
+    cin>>n;
+    x = ReturnArray(n); // now x will point to the array created in the heap memory
+    
+    //Printing returned array
+    for(int i=0;i<n;i++)
+    {
+        cout<<"The Value of "<<i<<" element is "<<x[i]<<endl;
+    }
+    
+    return 0;
+}
+
+
+Output:
+Enter the size of array to be returned : 
+3
+Enter the Value of 0 element
+54
+Enter the Value of 1 element
+21
+Enter the Value of 2 element
+86
+The Value of 0 element is 54
+The Value of 1 element is 21
+The Value of 2 element is 86
