@@ -1,0 +1,47 @@
+#include <iostream>
+#include <stdlib.h>
+using namespace std;
+//Function which takes an array as parameter 
+void ArrayAsParameter(int a [], int y)
+{
+    a[0] = 37; // to show that call by address functions changes the value of the array when the change is made inside the function
+    //Printing values in the array
+    for (int i = 0; i<y; i++){
+       cout<<"Value of "<<i<<" position in the array is "<<a[i]<<endl;
+    }
+}
+
+int main()
+{
+    int n;
+    cout<<"enter the size of array :"<<endl;
+    cin>>n;
+    int x[n];
+    for(int i = 0; i<n; i++ )
+    {
+        cout<<"Enter "<<i<<" element in array"<<endl;
+        cin>>x[i];
+    }
+    ArrayAsParameter(x,n); // arrays can only be passes by address to functions
+    
+    return 0;
+}
+
+Output:
+enter the sire of array :
+5
+Enter 0 element in array
+1
+Enter 1 element in array
+2
+Enter 2 element in array
+3
+Enter 3 element in array
+4
+Enter 4 element in array
+5
+Value of 0 position in the array is 37
+Value of 1 position in the array is 2
+Value of 2 position in the array is 3
+Value of 3 position in the array is 4
+Value of 4 position in the array is 5
