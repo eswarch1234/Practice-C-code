@@ -1,0 +1,64 @@
+#include <iostream>
+#include <stdlib.h>
+using namespace std;
+
+struct Rectangle{
+    int length;
+    int breadth;
+};
+
+int main()
+{
+    struct Rectangle *p;
+    struct Rectangle *q;
+    
+    //for C++ language
+    //This is the dynamic allocaton for pointer Q
+    q = new Rectangle; 
+    cout<<q->length<<endl;
+    cout<<q->breadth<<endl;
+    
+    //Printing values before assignment
+    cout<<"Printing values of Q before assignment "<<endl;
+    cout<<q->length<<endl;
+    cout<<q->breadth<<endl;
+    
+    //Assigning values
+    (*q).breadth = 5; //another way of assigning values to pointer instead of using the -> operator
+    (*q).length = 10; // we mention the pointer in the () because . operator preseeds -> operator
+    
+    //Printing values againg to see if values have been assigned
+    cout<<"Printing values of Q after assignment "<<endl;
+    cout<<q->length<<endl;
+    cout<<q->breadth<<endl;
+    
+    //for C language
+    //This is the dynamic allocaton for pointer P
+    
+    p = (struct Rectangle *)malloc(sizeof(struct Rectangle)); //type casting is required as malloc returns void pointer
+    
+    //Printing values before assignment
+    cout<<"Printing values of P before assignment "<<endl;
+    cout<<p->length<<endl;
+    cout<<p->breadth<<endl;
+    
+    //Assigning values
+    p->length  = 12;
+    p->breadth  = 7;
+    
+    //Printing Values of P after assignmest
+    cout<<"Printing values of P after assignment "<<endl;
+    cout<<p->length<<endl;
+    cout<<p->breadth<<endl;
+    
+    //deleting dynamically allocated memory 
+    delete p; 
+    delete q;
+    
+    // to check if the deletion has happned in heap memory
+    cout<<"To check if the deletion has happned in heap memory "<<endl;
+    cout<<p->length<<endl;
+    cout<<p->breadth<<endl;
+     
+    return 0;
+}
