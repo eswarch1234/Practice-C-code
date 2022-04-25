@@ -1,0 +1,48 @@
+#include <iostream>
+#include <stdlib.h>
+using namespace std;
+//function for call by value
+void swapcbv(int x, int y)
+{
+    int temp;
+    temp=x;
+    x=y;
+    y=temp;
+}
+//function for call by address
+void swapcba(int *x, int *y)
+{
+    int temp;
+    temp=*x;
+    *x=*y;
+    *y=temp;
+}
+//function to call by reference
+void swapcbr(int &x, &int y)
+{
+    int temp;
+    temp=x;
+    x=y;
+    y=temp;
+}
+int main()
+{
+    int a,b;
+    a=10;
+    b=20;
+    
+    //In call by value function the swap function doesnot return the swapped values because the values are swaped in the formal parameters and not the actual parameters 
+    swapcbv(a,b);
+    cout<<"After calling the Swap By Value function value of a is: "<<a<<" and value of b is: "<<b<<endl;
+    
+    //In call by address function we must give the address of the variables as it will be store in the pointer parameters of the function
+    swapcba(&a,&b);
+    cout<<"After calling the Swap By Address function value of a is: "<<a<<" and value of b is: "<<b<<endl;
+    
+    //The call by reference function is used less often because the swap function becomes a part of the main function. So the source code remains modular/procedural but the machine code becomes monolythic
+    //Only supported by C++ and not C
+    swapcbr(a,b);
+    cout<<"After calling the Swap By Reference function value of a is: "<<a<<" and value of b is: "<<b<<endl;
+     
+    return 0;
+}
