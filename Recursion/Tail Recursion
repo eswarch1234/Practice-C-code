@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+void tailfunction(int n)
+{
+    if(n>0)
+    {
+   cout<<n;
+   tailfunction(n-1); // when the recurring function calls itself as the last statement of the function and no other statments are left to be executed after, then it is called a tail recursion.
+}
+}
+int main()
+{
+    tailfunction(3);
+  return 0;
+}
+
+
+Output:
+321
