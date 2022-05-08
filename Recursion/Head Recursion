@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+void headfunction(int n)
+{
+    if(n>0)
+    {
+      headfunction(n-1); // when the recurring function calls itself as the first statement of the function,then it is called a head recursion.
+      cout<<n;
+    }
+}
+int main()
+{
+    headfunction(3);
+  return 0;
+}
+
+
+Output:
+123
