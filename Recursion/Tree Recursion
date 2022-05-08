@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+void trfunction(int n)
+{
+    if(n>0)
+    {
+   cout<<n;
+   trfunction(n-1);
+   trfunction(n-1);
+}
+}
+int main()
+{
+    trfunction(4);
+  return 0;
+}
+
+
+
+output:
+432112113211211
