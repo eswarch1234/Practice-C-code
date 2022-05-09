@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int sn(int n)
+{
+  if(n==1)
+    return 1;
+  else if(n>1)
+      return n+sn(n-1);
+}
+
+int main()
+{
+  int r,n;
+  cout<<"Enter the sum on the N natural numbers you want to find the sum of ";
+  cin>>n;
+  r=sn(n);
+  cout<<"Sum of the first "<<n<<" natural numbers is "<<r<<endl;
+  return 0;
+}
+
+
+Output:
+Enter the sum on the N natural numbers you want to find the sum of 234
+Sum of the first 234 natural numbers is 27495
