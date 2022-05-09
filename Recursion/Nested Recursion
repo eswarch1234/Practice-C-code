@@ -1,0 +1,23 @@
+// Nested recursion becomes a very comples tree as it needs to calculate the recursion value of the inner call and then the outer call.
+#include <iostream>
+using namespace std;
+
+int funa(int n)
+{
+    if(n>100)
+      return n-10;
+    else
+      return funa(funa(n+11));
+}
+
+int main()
+{
+  int r; 
+  r=funa(200);
+  cout<<r;
+  return 0;
+}
+
+
+Output:
+190
