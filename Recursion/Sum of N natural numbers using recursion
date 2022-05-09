@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int sn(int n)
+int sn(int n) // recursive call (Complexity O(n))
 {
   if(n==1)
     return 1;
@@ -9,17 +9,25 @@ int sn(int n)
       return n+sn(n-1);
 }
 
+int snm(int n) // Mathamatical way (complexity is O(1))
+{
+return (n*(n+1))/2;
+}
+
 int main()
 {
-  int r,n;
+  int r,m,n;
   cout<<"Enter the sum on the N natural numbers you want to find the sum of ";
   cin>>n;
   r=sn(n);
+  m=snm(n); 
   cout<<"Sum of the first "<<n<<" natural numbers is "<<r<<endl;
+  cout<<"Sum of the first "<<n<<" natural numbers using mathematical formula is "<<m<<endl;
   return 0;
 }
 
 
 Output:
-Enter the sum on the N natural numbers you want to find the sum of 234
-Sum of the first 234 natural numbers is 27495
+Enter the sum on the N natural numbers you want to find the sum of 231
+Sum of the first 231 natural numbers is 26796
+Sum of the first 231 natural numbers using mathematical formula is 26796
