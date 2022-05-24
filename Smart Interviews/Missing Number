@@ -1,0 +1,27 @@
+/* Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array. */
+
+/* 
+Input: nums = [9,6,4,2,3,5,7,0,1]
+Output: 8
+Explanation: n = 9 since there are 9 numbers, so all numbers are in the range [0,9]. 8 is the missing number in the range since it does not appear in nums. 
+*/
+
+/* 
+Solution:
+To do this our approach is to first perform the sum of the first n natural numbers and substract that from the sum of the vector elements;
+*/
+
+/*
+Code:
+*/
+class Solution {
+public:
+    int missingNumber(vector<int>& nums) {
+        
+        int sum = accumulate(nums.begin(),nums.end(), 0);         // sum function to find sum of stt the numbers in the vector
+        int l = nums.size();                                     // finding size of vector
+        int d = (l*(l+1))/2;                                    // sum of first l natural numbers formula
+        int r = d - sum;                                       // Substraction will give the missing number
+        return r;
+    }
+};
