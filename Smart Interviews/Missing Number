@@ -8,11 +8,12 @@ Explanation: n = 9 since there are 9 numbers, so all numbers are in the range [0
 
 /* 
 Solution:
-To do this our approach is to first perform the sum of the first n natural numbers and substract that from the sum of the vector elements;
+1. To do this our approach is to first perform the sum of the first n natural numbers and substract that from the sum of the vector elements;
+2. Sort the vector fist and then perform a binary search by looping over the range of numbers.
 */
 
 /*
-Code:
+Code 1:
 */
 class Solution {
 public:
@@ -23,5 +24,21 @@ public:
         int d = (l*(l+1))/2;                                    // sum of first l natural numbers formula
         int r = d - sum;                                       // Substraction will give the missing number
         return r;
+    }
+};
+
+/*
+Code 2:
+*/
+class Solution {
+public:
+    int missingNumber(vector<int>& nums) {
+        sort(nums.begin(),nums.end());      //sort function
+        int n= nums.size();
+        for(int i = 0 ; i <= n ; i++)
+        {
+            if(!binary_search(nums.begin(),nums.end(),i)) return i;   //binary search function(returns boolean value), iterating over the range of [0 , n]
+        }
+        return 0;
     }
 };
